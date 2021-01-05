@@ -144,3 +144,63 @@ static void Main(string[] args)
             Console.ReadKey();
         }
 // 4 //
+
+// DAVALEBA 5 ---- TU SWORAD GAVIGE PIROBA //
+static int countVariants(int stearscount)
+        {
+            Console.WriteLine("Please Wait... -_-");
+            int sc = 0;
+            int randNum;
+            string save = "";
+            Random rand = new Random();
+
+            int cc = 0;
+            int ic = 0;
+            List<string> saveList = new List<string> { };
+            for (int i = 1; ; i++)
+            {
+                randNum = rand.Next(1, 3);
+                sc += randNum;
+                save += randNum.ToString();
+                if (sc > stearscount)
+                {
+                    save = "";
+                    sc = 0;
+                    ic++;
+                    if (ic >= 40000)
+                    {
+                        break;
+                    }
+                }
+                else if (sc == stearscount && !saveList.Contains(save))
+                {
+                    saveList.Add(save);
+                    save = "";
+                    sc = 0;
+                    cc++;
+                    ic = 0;
+                }
+            }
+            // ACHVENEBS 1 an 2 sapexurit asvlis variantebs
+            //saveList.Sort();
+            //foreach (var item in saveList)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            Console.WriteLine(saveList.Count);
+            return cc;
+        }
+
+static void Main(string[] args)
+        {
+            Console.Write("Stears N: ");
+            int N = int.Parse(Console.ReadLine());
+
+            countVariants(N);
+
+
+
+            Console.ReadKey();
+        }
+// 5 //
