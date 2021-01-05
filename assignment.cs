@@ -56,3 +56,33 @@ static void Main(string[] args)
             Console.ReadKey();
         }
 // 1 //
+
+// DAVALEBA 2 //
+static int notContains(int[] array)
+        {
+            Array.Sort(array);
+            int minNumber = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] + 1 > 0 && !array.Contains(array[i] + 1))
+                {
+                    minNumber = array[i] + 1;
+                    break;
+                }
+            }
+
+            return minNumber;
+        }
+
+static void Main(string[] args)
+        {
+
+            int[] newArray = { 100, 2001, 5, 20, 13, 101, 6};
+
+            Console.WriteLine(notContains(newArray));
+
+
+
+            Console.ReadKey();
+        }
+// 2 //
