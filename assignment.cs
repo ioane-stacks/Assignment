@@ -12,7 +12,7 @@ static bool isPalindrome(string text)
             Console.WriteLine(temp.Equals(text));
             return temp.Equals(text);
 
-        }//
+        }
 static void Main(string[] args)
         {
 
