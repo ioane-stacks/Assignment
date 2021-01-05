@@ -1,5 +1,5 @@
 
-// DAVALEBA 0 //
+// DAVALEBA 1 //
 static bool isPalindrome(string text)
         {
             char[] charArray = new char[text.Length];
@@ -19,9 +19,9 @@ static void Main(string[] args)
 
             Console.ReadKey();
         }    
-// 0 //
+// 1 //
 
-// DAVALEBA 1 //
+// DAVALEBA 2 //
 static int minSplit(int amount)
         {
             int[] monets = { 1, 5, 10, 20, 50 };
@@ -55,9 +55,9 @@ static void Main(string[] args)
 
             Console.ReadKey();
         }
-// 1 //
+// 2 //
 
-// DAVALEBA 2 //
+// DAVALEBA 3 //
 static int notContains(int[] array)
         {
             Array.Sort(array);
@@ -85,4 +85,62 @@ static void Main(string[] args)
 
             Console.ReadKey();
         }
-// 2 //
+// 3 //
+
+// DAVALEBA 4 //
+static bool isCorrect;
+
+static bool isProperty(string sequence)
+        {
+            Stack<char> newStack = new Stack<char>();
+
+            int openBracetCount = 0;
+            int closeBracetCount = 0;
+
+            for (int i = 0; i <= sequence.Length - 1; i++)
+            {
+                if (sequence[0] == ')')
+                {
+                    return false;
+                }
+                if (sequence[i] == '(')
+                {
+                    newStack.Push(sequence[i]);
+                    openBracetCount++;
+                }
+                else if (sequence[i] == ')')
+                {
+                    closeBracetCount++;
+                    if (!ValidatePerBraces(newStack.Pop(), sequence[i]))
+                    {
+                        isCorrect = false;
+                        return isCorrect;
+                    }
+                }
+                if (i >= sequence.Length - 1)
+                {
+                    if (openBracetCount != closeBracetCount)
+                    {
+                        isCorrect = false;
+                        return isCorrect;
+                    }
+                }
+            }
+            isCorrect = true;
+
+            return isCorrect;
+        }
+static bool ValidatePerBraces(char a, char b)
+        {
+            return a == '(' && b == ')';
+        }
+
+static void Main(string[] args)
+        {
+
+            Console.Write("shemoitanet prchxilebi: ");
+            Console.WriteLine(isProperty(Console.ReadLine()));
+
+            Console.ReadKey();
+        }
+// 4 //
