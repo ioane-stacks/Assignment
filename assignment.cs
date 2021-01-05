@@ -1,5 +1,5 @@
 
-// 0 //
+// DAVALEBA 0 //
 static bool isPalindrome(string text)
         {
             char[] charArray = new char[text.Length];
@@ -21,7 +21,7 @@ static void Main(string[] args)
         }    
 // 0 //
 
-// 1 //
+// DAVALEBA 1 //
 static int minSplit(int amount)
         {
             int[] monets = { 1, 5, 10, 20, 50 };
