@@ -145,7 +145,7 @@ static void Main(string[] args)
         }
 // 4 //
 
-// DAVALEBA 5 ---- TU SWORAD GAVIGE PIROBA //
+// DAVALEBA 5 ---- თუ სწორედ გავიგე პირობა //
 static int countVariants(int stearscount)
         {
             Console.WriteLine("Please Wait... -_-");
