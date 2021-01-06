@@ -148,7 +148,37 @@ static void Main(string[] args)
 // DAVALEBA 5 ---- თუ სწორედ გავიგე პირობა //
 static int countVariants(int stearscount)
         {
-            Console.WriteLine("Please Wait... -_-");
+            List<int> A = new List<int> { 0, 1 }; // თუ თითო მოქმედებაზე შეგვიძლია 1 ან 2 საფეხურით ასვლა, პირველ საფეხურზე
+                                                  // მხოლოდ 1 ვარიანტი იქნება.
+            int ans = 0;
+            for (int i = 1; i <= stearscount; i++)
+            {
+                if (stearscount == 0) break;
+                ans = A[i] + A[i - 1];
+                A.Add(ans);
+
+            }
+            return ans;
+        }
+
+static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.Write("Stears N: ");
+                int N = int.Parse(Console.ReadLine());
+
+                Console.WriteLine(countVariants(N));
+
+                //Console.ReadKey();
+            }
+        }
+// 5 //
+
+// DAVALEBA 5 -- გამოაქვს ასვლის შესაძლო კომბინაციები, //
+static int countVariants(int stearscount)
+        {
+            Console.WriteLine("Please Wait...<3");
             int sc = 0;
             int randNum;
             string save = "";
@@ -167,7 +197,7 @@ static int countVariants(int stearscount)
                     save = "";
                     sc = 0;
                     ic++;
-                    if (ic >= Math.Pow(stearscount * 10, 2))
+                    if (ic >= Math.Pow(stearscount * 15, 2))
                     {
                         break;
                     }
