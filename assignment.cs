@@ -167,7 +167,7 @@ static int countVariants(int stearscount)
                     save = "";
                     sc = 0;
                     ic++;
-                    if (ic >= 40000)
+                    if (ic >= Math.Pow(stearscount * 10, 2))
                     {
                         break;
                     }
@@ -192,7 +192,7 @@ static int countVariants(int stearscount)
             return cc;
         }
 
-static void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.Write("Stears N: ");
             int N = int.Parse(Console.ReadLine());
