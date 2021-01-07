@@ -4,21 +4,25 @@ static bool isPalindrome(string text)
         {
             char[] charArray = new char[text.Length];
             for (int i = 0; i < text.Length; i++) charArray[i] = text[i];
-        
-            Array.Reverse(charArray);
-            string temp = new string(charArray);
-        
-            Console.WriteLine(temp.Equals(text));
-            return temp.Equals(text);
-        }
-static void Main(string[] args)
-        {
 
-            Console.Write("Name to check pallindrome: ");
-            isPalindrome(Console.ReadLine());
+            Array.Reverse(charArray);
+            string rText = new string(charArray);
+
+            return rText == text;
+        }
+
+static void Check()
+        {
+            Console.Write("isPalindrome? >/");
+            string word = Console.ReadLine();
+            Console.Write(isPalindrome(word));
+        }
+        static void Main(string[] args)
+        {
+            Check();
 
             Console.ReadKey();
-        }    
+        }
 // 1 //
 
 // DAVALEBA 2 //
@@ -148,30 +152,29 @@ static void Main(string[] args)
 // DAVALEBA 5 ---- თუ სწორედ გავიგე პირობა //
 static int countVariants(int stearscount)
         {
-            List<int> A = new List<int> { 0, 1 }; // თუ თითო მოქმედებაზე შეგვიძლია 1 ან 2 საფეხურით ასვლა, პირველ საფეხურზე
+            List<int> a = new List<int> { 0, 1 }; // თუ თითო მოქმედებაზე შეგვიძლია 1 ან 2 საფეხურით ასვლა, პირველ საფეხურზე
                                                   // მხოლოდ 1 ვარიანტი იქნება.
             int ans = 0;
             for (int i = 1; i <= stearscount; i++)
             {
                 if (stearscount == 0) break;
-                ans = A[i] + A[i - 1];
-                A.Add(ans);
+                ans = a[i] + a[i - 1];
+                a.Add(ans);
 
             }
             return ans;
         }
-
-static void Main(string[] args)
+        static void PrintVariants(int a) { Console.WriteLine($"Asvlis Shesadzlo Varianti: {countVariants(a)}"); }
+        static void Main(string[] args)
         {
             while (true)
             {
                 Console.Write("Stears N: ");
                 int N = int.Parse(Console.ReadLine());
 
-                Console.WriteLine(countVariants(N));
-
-                //Console.ReadKey();
+                PrintVariants(N);
             }
+            //Console.ReadKey();
         }
 // 5 //
 
