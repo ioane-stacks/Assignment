@@ -187,7 +187,7 @@ static int countVariants(int stearscount)
             string save = "";
             Random rand = new Random();
 
-            int cc = 0;
+            int c = 0;
             int ic = 0;
             List<string> saveList = new List<string> { };
             for (int i = 1; ; i++)
@@ -210,19 +210,19 @@ static int countVariants(int stearscount)
                     saveList.Add(save);
                     save = "";
                     sc = 0;
-                    cc++;
+                    c++;
                     ic = 0;
                 }
             }
             // ACHVENEBS 1 an 2 sapexurit asvlis variantebs
-            //saveList.Sort();
-            //foreach (var item in saveList)
-            //{
-            //    Console.Write(item + " ");
-            //}
+            saveList.Sort();
+            foreach (var item in saveList)
+            {
+                Console.Write(item + " ");
+            }
 
-            Console.WriteLine(saveList.Count);
-            return cc;
+            Console.WriteLine($"\nShesadzlo Varianti: {saveList.Count}");
+            return c;
         }
 
         static void Main(string[] args)
